@@ -1,7 +1,5 @@
 use crate::{Window, WindowConfig, pang_core_error};
 
-// Code above should be somewhere else
-
 pub struct Win32Window {
     Config: WindowConfig
 }
