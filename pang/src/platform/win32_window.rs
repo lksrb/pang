@@ -23,7 +23,7 @@ impl Win32Window {
         glfwWindow.set_key_polling(true);
         glfwWindow.make_current();
         
-        let window = LinuxWindow {
+        let window = Win32Window {
             WindowHandle: glfwWindow,
             GlfwContext: glfwContext,
             Config: config,
