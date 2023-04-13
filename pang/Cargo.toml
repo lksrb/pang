@@ -10,3 +10,4 @@ name = "pang"
 path = "pang.rs"
 
 [dependencies]
+glfw = "0.51.0"

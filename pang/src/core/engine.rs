@@ -22,18 +22,18 @@ impl Engine {
     pub fn run(&mut self) {
         self.App.on_create();
 
-        let title = String::from("Hello");
-
-        self.Window.set_title(&title);
+        // Show window after initialization
+        self.Window.show();
 
         while self.IsRunning {
-
+            self.Window.process_events();
         }
         
         self.App.on_shutdown();
     }
 
-    pub fn shutdown(&self) {
+    pub fn shutdown(&mut self) {
+        self.IsRunning = false;
         pang_core_info!("Engine is shutting down!");
     }
 }

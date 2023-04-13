@@ -4,14 +4,14 @@ use glfw::Context;
 
 use crate::{Window, WindowConfig, pang_core_error};
 
-pub struct Win32Window {
+pub struct LinuxWindow {
     WindowHandle: glfw::Window,
     GlfwContext: glfw::Glfw, // FIXME: Should not be part of this struct but rather static or global
     IsMinimized: bool,
     Config: WindowConfig
 }
 
-impl Win32Window {
+impl LinuxWindow {
     pub fn new(config: WindowConfig) -> Self {
         let mut glfwContext = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
         glfwContext.window_hint(glfw::WindowHint::Visible(false));
@@ -34,7 +34,7 @@ impl Win32Window {
     }
 }
 
-impl Window for Win32Window {
+impl Window for LinuxWindow {
     fn set_title(&mut self, title: &String) {
         pang_core_error!("SetTitle");
     }
